@@ -1,0 +1,18 @@
+<package format="2">
+  <name>car_description</name>
+  <version>1.0.0</version>
+  <description>urdf package</description>
+
+  <author>fantasyplus</author>
+  <maintainer email="530925206@qq.com" />
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roslaunch</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rviz</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>gazebo</depend>
+
+</package>

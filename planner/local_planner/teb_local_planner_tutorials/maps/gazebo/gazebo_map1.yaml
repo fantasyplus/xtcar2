@@ -1,0 +1,7 @@
+image: gazebo_map1.pgm
+resolution: 0.01
+origin: [-15.0, -15.0, 0.0]
+negate: 0
+occupied_thresh: 0.8
+free_thresh: 0.1
+
