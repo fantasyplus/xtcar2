@@ -2,7 +2,7 @@
 
     <!-- 打印时显示节点 -->
     <env name="ROSCONSOLE_FORMAT" value="[${node}]: ${message}" />
-
+ 
     <!-- 启动仿真环境 -->
     <include file="$(find car_gazebo)/launch/ackermann_model.launch" />
 
