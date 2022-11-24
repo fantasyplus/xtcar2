@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- launch-prefix="xterm -e gdb - -->
+  <!-- -args" -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen"
+    clear_params="true">
+
+    <param name="base_global_planner" value="hybrid_astar_planner_ros/HybridAstarPlannerRos" />
+
+    <!-- mpc -->
+    <!-- <param name="base_local_planner" value="mpc_local_planner/MpcLocalPlannerROS" />
+    <param name="controller_frequency" value="5.0" />
+    <param name="controller_patience" value="15.0" />
+    <param name="clearing_rotation_allowed" value="false" /> 
+    <rosparam file="$(find mpc_local_planner_examples)/cfg/carlike/mpc_local_planner_params.yaml" command="load" /> -->
+
+
+    <!-- teb -->
+    <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+    <rosparam file="$(find demo_launch)/config/teb/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find demo_launch)/config/teb/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find demo_launch)/config/teb/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find demo_launch)/config/teb/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find demo_launch)/config/teb/teb_local_planner_params.yaml" command="load" />
+
+    <!-- move_base -->
+    <rosparam file="$(find demo_launch)/config/move_base/move_base_params_hys.yaml" command="load" />
+
+    <!-- planner -->
+    <rosparam file="$(find demo_launch)/config/planner/hybrid_astar_planner_params.yaml" command="load" />
+    <remap from="/cmd_vel" to="/ackermann_steering_controller/cmd_vel" />
+  </node>
+
+
+</launch> 

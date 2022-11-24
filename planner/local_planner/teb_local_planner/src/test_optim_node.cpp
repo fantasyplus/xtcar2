@@ -150,10 +150,11 @@ int main( int argc, char** argv )
   RobotFootprintModelPtr robot_model = TebLocalPlannerROS::getRobotFootprintFromParamServer(n);
   
   // Setup planner (homotopy class planning or just the local teb planner)
-  if (config.hcp.enable_homotopy_class_planning)
+  // if (config.hcp.enable_homotopy_class_planning)
+  //   planner = PlannerInterfacePtr(new HomotopyClassPlanner(config, &obst_vector, robot_model, visual, &via_points));
+  // else
+    //planner = PlannerInterfacePtr(new TebOptimalPlanner(config, &obst_vector, robot_model, visual, &via_points));
     planner = PlannerInterfacePtr(new HomotopyClassPlanner(config, &obst_vector, robot_model, visual, &via_points));
-  else
-    planner = PlannerInterfacePtr(new TebOptimalPlanner(config, &obst_vector, robot_model, visual, &via_points));
   
 
   no_fixed_obstacles = obst_vector.size();

@@ -1,0 +1,60 @@
+HybridAstarPlannerRos:
+  #最长搜索时间（ms）
+  time_limit: 10000.0
+  #车体形状
+  vehicle_length: 3.452
+  vehicle_width: 2.45
+  vehicle_cg2back: 1.326
+  #最大转弯半径
+  max_turning_radius: 20.0
+  #最小转弯半径
+  min_turning_radius: 3.925
+  #最大和最小转弯半径之间离散的数量
+  turning_radius_size: 0
+
+  #[0-2π]之间角度离散的数量
+  theta_size: 48
+
+  #倒车的惩罚权重
+  reverse_weight: 4.0
+  #改变方向的惩罚权重
+  turning_weight: 2.2
+  #离终点的横向距离容忍大小
+  goal_lateral_tolerance: 1.0
+  #离终点的纵向距离容忍大小
+  goal_longitudinal_tolerance: 1.0
+  #离终点的角度容忍大小
+  goal_angular_tolerance: 0.15708
+  #在costmap下被认为是障碍物的最小值
+  obstacle_threshold100: 100
+
+  #是否允许倒车
+  use_back: false
+  #是否使用RS代价值
+  use_reeds_shepp: true
+  #是否使用障碍物启发值
+  use_obstacle_heuristic: false
+  #是否使用解析扩张
+  use_analytic_expansion: false
+  #是否使用航向启发值（小论文）
+  use_theta_cost: false
+  #障碍物启发值下的theta_cost（小论文）
+  obstacle_theta_ratio: false
+  #是否平滑轨迹
+  use_smoother: true
+
+  #与障碍物的最大距离，如果超过这个距离，就没必要优化了
+  obstacle_distance_max: 0.5
+  #/ falloff rate for the voronoi field
+  alpha: 0.5
+  #/ weight for the obstacle term
+  obstacle_weight: 0.5
+  #/ weight for the curvature term
+  curvature_weight: 0.5
+  #/ weight for the smoothness term
+  smoothness_weight: 0.5
+
+  #解析扩张的比率
+  analytic_expansion_ratio: 35
+  #解析扩张的最大距离，一般不小于4、5倍的最小转弯半径
+  analytic_expansion_max_length: 30

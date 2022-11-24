@@ -142,15 +142,21 @@
     <sensor type="ray" name="hokuyo_sensor">
       <pose>0 0 0.0 0 0 0</pose>
       <visualize>false</visualize>
-      <update_rate>400</update_rate>
+      <update_rate>40</update_rate>
       <ray>
         <scan>
           <horizontal>
-            <samples>1081</samples>
+            <samples>500</samples> <!-- Change this to 500 if gazebo keeps timing out -->
             <resolution>1</resolution>
-            <min_angle>-2.3561944902</min_angle>
-            <max_angle>2.3561944902</max_angle>
+            <min_angle>-${M_PI}</min_angle>
+            <max_angle> ${M_PI}</max_angle>
           </horizontal>
+          <!-- <vertical>
+            <samples>16</samples>
+            <resolution>2</resolution>
+            <min_angle>-${15*M_PI/180.0}</min_angle>
+            <max_angle> ${15*M_PI/180.0}</max_angle>
+          </vertical> -->
         </scan>
         <range>
           <min>0.05</min>

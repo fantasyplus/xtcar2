@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>hybrid_astar_planner_ros</name>
+  <version>0.1.0</version>
+  <description>The hybrid_astar_planner_ros package</description>
+  <maintainer email="530925206@qq.com">fantasyplus</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>visualization_msgs</depend>
+  <depend>pluginlib</depend>
+  <depend>costmap_2d</depend>
+  <depend>nav_core</depend>
+  <!-- insert by xt -->
+  <depend>high_performence_hybrid_astar</depend>
+
+  <export>
+    <nav_core plugin="${prefix}/hys_plugin.xml" />
+  </export>
+</package>

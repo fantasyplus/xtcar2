@@ -42,30 +42,14 @@ Visualization Manager:
         All Enabled: false
         base_footprint:
           Value: false
-        base_link:
+        base_laser_link:
           Value: true
-        front_left_steer_link:
-          Value: false
-        front_left_wheel_link:
-          Value: false
-        front_right_steer_link:
-          Value: false
-        front_right_wheel_link:
-          Value: false
-        front_steer_link:
-          Value: false
-        lidar_link:
+        base_link:
           Value: true
         map:
           Value: true
         odom:
           Value: true
-        rear_left_wheel_link:
-          Value: false
-        rear_right_wheel_link:
-          Value: false
-        rear_wheel_link:
-          Value: false
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -76,21 +60,7 @@ Visualization Manager:
           odom:
             base_footprint:
               base_link:
-                front_left_steer_link:
-                  front_left_wheel_link:
-                    {}
-                front_right_steer_link:
-                  front_right_wheel_link:
-                    {}
-                front_steer_link:
-                  {}
-                lidar_link:
-                  {}
-                rear_left_wheel_link:
-                  {}
-                rear_right_wheel_link:
-                  {}
-                rear_wheel_link:
+                base_laser_link:
                   {}
       Update Interval: 0
       Value: true
@@ -272,7 +242,7 @@ Visualization Manager:
       Axes Radius: 0.009999999776482582
       Class: rviz/PoseArray
       Color: 255; 25; 0
-      Enabled: true
+      Enabled: false
       Head Length: 0.07000000029802322
       Head Radius: 0.029999999329447746
       Name: PoseArray
@@ -281,7 +251,7 @@ Visualization Manager:
       Shape: Arrow (Flat)
       Topic: /particlecloud
       Unreliable: false
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
@@ -310,15 +280,15 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 12.466296195983887
+      Distance: 8.97854995727539
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 5.6606340408325195
-        Y: 10.957915306091309
+        X: 4.690742015838623
+        Y: 7.584649085998535
         Z: -5.194544792175293e-5
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
@@ -346,5 +316,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1389
-  X: 1920
-  Y: 200
+  X: 531
+  Y: 170
