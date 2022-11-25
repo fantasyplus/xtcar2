@@ -14,8 +14,8 @@
 
   <!-- Properties -->
   <xacro:property name="steer_effort" value="100.0" />
-  <xacro:property name="steer_velocity" value="50.0" />
-  <xacro:property name="steer_limit_deg" value="42.0" />
+  <xacro:property name="steer_velocity" value="100.0" />
+  <xacro:property name="steer_limit_deg" value="45.0" />
 
   <!-- Bicycle model front steering link (required for steer_drive_controller) -->
   <xacro:macro name="front_steer"

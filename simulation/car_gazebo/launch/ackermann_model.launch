@@ -14,7 +14,7 @@
     <param name="robot_description" command="$(find xacro)/xacro $(find car_description)/urdf/ackermann.urdf.xacro" />
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="world_name" value="$(find car_gazebo)/worlds/maze.world" />
+        <arg name="world_name" value="$(find car_gazebo)/worlds/Lturn.world" />
         <arg name="paused" value="false" />
         <arg name="use_sim_time" value="true" />
         <arg name="gui" value="true" />

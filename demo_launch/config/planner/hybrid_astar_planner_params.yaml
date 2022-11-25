@@ -26,7 +26,7 @@ HybridAstarPlannerRos:
   #离终点的角度容忍大小
   goal_angular_tolerance: 0.15708
   #在costmap下被认为是障碍物的最小值
-  obstacle_threshold100: 100
+  obstacle_threshold: 1
 
   #是否允许倒车
   use_back: false

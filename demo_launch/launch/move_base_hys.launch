@@ -17,11 +17,11 @@
 
     <!-- teb -->
     <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+    <rosparam file="$(find demo_launch)/config/teb/teb_local_planner_params.yaml" command="load" />
     <rosparam file="$(find demo_launch)/config/teb/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find demo_launch)/config/teb/costmap_common_params.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find demo_launch)/config/teb/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find demo_launch)/config/teb/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find demo_launch)/config/teb/teb_local_planner_params.yaml" command="load" />
 
     <!-- move_base -->
     <rosparam file="$(find demo_launch)/config/move_base/move_base_params_hys.yaml" command="load" />

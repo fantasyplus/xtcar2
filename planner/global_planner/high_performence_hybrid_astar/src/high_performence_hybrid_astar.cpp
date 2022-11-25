@@ -663,24 +663,28 @@ void HybridAstar::computeCollisionIndexes(const int theta_index, std::vector<Ind
 
 bool HybridAstar::detectCollision(const IndexXYT &base_index) const
 {
+    //全局地图无膨胀的情况下
     //获取当前搜索角度下的车辆碰撞索引数组
-    const auto &coll_indexes_2d = _collision_index_table[base_index.theta_index];
+    // const auto &coll_indexes_2d = _collision_index_table[base_index.theta_index];
 
-    for (const auto &coll_index_2d : coll_indexes_2d)
-    {
-        // theta对碰撞检测没有影响，所以无所谓取多少
-        IndexXYT coll_index{coll_index_2d.x_index, coll_index_2d.y_index, 0};
+    // for (const auto &coll_index_2d : coll_indexes_2d)
+    // {
+    //     // theta对碰撞检测没有影响，所以无所谓取多少
+    //     IndexXYT coll_index{coll_index_2d.x_index, coll_index_2d.y_index, 0};
 
-        //当前点的位置，加上车体大小映射点
-        coll_index.x_index += base_index.x_index;
-        coll_index.y_index += base_index.y_index;
+    //     //当前点的位置，加上车体大小映射点
+    //     coll_index.x_index += base_index.x_index;
+    //     coll_index.y_index += base_index.y_index;
 
-        if (isOutOfRange(coll_index) || isObstacle(coll_index))
-        {
-            return true;
-        }
-    }
-    return false;
+    //     if (isOutOfRange(coll_index) || isObstacle(coll_index))
+    //     {
+    //         return true;
+    //     }
+    // }
+    // return false;
+
+    //如果全局地图有膨胀，直接返回当前格点就行
+    return isObstacle(base_index);
 }
 
 void HybridAstar::visualCollisionClear()

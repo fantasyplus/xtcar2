@@ -38,7 +38,7 @@ namespace hybrid_astar_planner_ros
   {
     /*---------------------subscribe---------------------*/
     ros::NodeHandle _nh("");
-    _costmap_sub = _nh.subscribe("map", 1, &HybridAstarPlannerRos::costmapCallback, this);
+    _costmap_sub = _nh.subscribe("move_base/global_costmap/costmap", 1, &HybridAstarPlannerRos::costmapCallback, this);
   }
 
   HybridAstarPlannerRos::HybridAstarPlannerRos(std::string name, costmap_2d::Costmap2DROS *costmap_ros)
