@@ -17,7 +17,7 @@ find_package(
     costmap_2d
     nav_core
     #insert by xt
-    high_performence_hybrid_astar
+    high_performence_hybrid_astar_ros
 )
 
 include_directories(
@@ -39,7 +39,7 @@ catkin_package(
     costmap_2d
     nav_core
     #insert by xt
-    high_performence_hybrid_astar
+    high_performence_hybrid_astar_ros
 )
 
 add_library(${PROJECT_NAME}

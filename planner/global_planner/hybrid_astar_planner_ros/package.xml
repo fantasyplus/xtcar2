@@ -18,7 +18,7 @@
   <depend>costmap_2d</depend>
   <depend>nav_core</depend>
   <!-- insert by xt -->
-  <depend>high_performence_hybrid_astar</depend>
+  <depend>high_performence_hybrid_astar_ros</depend>
 
   <export>
     <nav_core plugin="${prefix}/hys_plugin.xml" />

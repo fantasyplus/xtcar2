@@ -87,6 +87,7 @@ namespace hybrid_astar_planner_ros
       _private_nh.param<float>("obstacle_theta_ratio", _hybrid_astar_param.obstacle_theta_ratio, 1.0);
 
       _private_nh.param<bool>("use_smoother", _hybrid_astar_param.use_smoother, false);
+      _private_nh.param<bool>("use_map_inflated", _hybrid_astar_param.use_map_inflated, false);
 
       _private_nh.param<float>("alpha", _hybrid_astar_param.alpha, 0.1);
       _private_nh.param<float>("obstacle_weight", _hybrid_astar_param.obstacle_weight, 0.1);

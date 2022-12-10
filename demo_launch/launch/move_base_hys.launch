@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <!-- launch-prefix="xterm -e gdb - -->
-  <!-- -args" -->
+
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen"
     clear_params="true">
 

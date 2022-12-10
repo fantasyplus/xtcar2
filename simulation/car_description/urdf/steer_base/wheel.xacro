@@ -13,9 +13,10 @@
   <xacro:include filename="$(find car_description)/urdf/steer_base/inertials.xacro" />
 
   <!-- Properties -->
-  <xacro:property name="steer_effort" value="100.0" />
-  <xacro:property name="steer_velocity" value="100.0" />
+  <xacro:property name="steer_effort" value="1000.0" />
+  <xacro:property name="steer_velocity" value="1000.0" />
   <xacro:property name="steer_limit_deg" value="45.0" />
+  <xacro:property name="deg_to_rad" value="0.01745329251994329577" />
 
   <!-- Bicycle model front steering link (required for steer_drive_controller) -->
   <xacro:macro name="front_steer"

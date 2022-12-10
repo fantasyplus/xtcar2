@@ -20,7 +20,7 @@
 #include <nav_msgs/Path.h>
 
 //自定义
-#include "high_performence_hybrid_astar.hpp"
+#include "high_performence_hybrid_astar_ros.hpp"
 
 namespace hybrid_astar_planner_ros
 {

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(high_performence_hybrid_astar)
+project(high_performence_hybrid_astar_ros)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 ")
@@ -21,13 +21,13 @@ endif(NOT OMPL_FOUND)
 message("${OMPL_LIBRARIES}")
 
 set(SOURCES
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/high_performence_hybrid_astar.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/high_performence_hybrid_astar_ros.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/src/dynamicvoronoi.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/src/bucketedqueue.cpp
 )
 set(HEADERS
   ${CMAKE_CURRENT_SOURCE_DIR}/include/struct_definition.hpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/include/high_performence_hybrid_astar.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/include/high_performence_hybrid_astar_ros.hpp
   ${CMAKE_CURRENT_SOURCE_DIR}/include/timer.h
   ${CMAKE_CURRENT_SOURCE_DIR}/include/dynamicvoronoi.h
   ${CMAKE_CURRENT_SOURCE_DIR}/include/point.h
@@ -37,7 +37,7 @@ set(HEADERS
 
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES high_performence_hybrid_astar
+  LIBRARIES high_performence_hybrid_astar_ros
 )
 
 include_directories(
@@ -46,7 +46,7 @@ include_directories(
   ${OMPL_INCLUDE_DIRS}
 )
 
-add_library(${PROJECT_NAME} src/high_performence_hybrid_astar.cpp ${HEADERS} ${SOURCES})
+add_library(${PROJECT_NAME} src/high_performence_hybrid_astar_ros.cpp ${HEADERS} ${SOURCES})
 
 target_link_libraries(${PROJECT_NAME}
   ${catkin_LIBRARIES}

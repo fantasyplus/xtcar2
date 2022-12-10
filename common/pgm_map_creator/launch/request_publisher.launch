@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <launch>
-  <arg name="map_name" default="maze_exe" />
+  <arg name="map_name" default="Rturn" />
   <arg name="save_folder" default="$(find car_gazebo)/maps" />
   <arg name="xmin" default="-50" />
   <arg name="xmax" default="50" />

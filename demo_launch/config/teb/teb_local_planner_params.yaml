@@ -13,7 +13,7 @@ TebLocalPlannerROS:
   global_plan_overwrite_orientation: False
 
   #指定考虑优化的全局计划子集的最大长度,如果为0或负数：禁用；长度也受本地Costmap大小的限制
-  max_global_plan_lookahead_dist: 10.0
+  max_global_plan_lookahead_dist: 10.0 #10
 
   feasibility_check_no_poses: 4 #判断生成的轨迹是否冲突时使用,从轨迹起点开始逐个检查轨迹上的点，若均不发生碰撞，则认为本次轨迹有效
 
@@ -32,15 +32,11 @@ TebLocalPlannerROS:
   publish_feedback: True
 
   # Robot
-  max_vel_x: 20.0
-  max_vel_x_backwards: 5.0
-  acc_lim_x: 5.0
-  max_vel_theta: 0.628
-  acc_lim_theta: 1.256
-
-  #仅适用于全向轮
-  # max_vel_y (double, default: 0.0)
-  # acc_lim_y (double, default: 0.5)
+  max_vel_x: 20.0 #20
+  max_vel_x_backwards: 5 #5
+  acc_lim_x: 5 # 5
+  max_vel_theta: 0.628 #0.628
+  acc_lim_theta: 1.256 #1.256
 
   # ********************** Carlike robot parameters ********************
   min_turning_radius: 3.925 # 最小转弯半径 注意车辆运动学中心是后轮中点
@@ -57,8 +53,8 @@ TebLocalPlannerROS:
     type: "polygon"
     vertices: [[1.756, 1.32], [1.756, -1.32], [-1.756, -1.32], [-1.756, 1.32]]
 
-  xy_goal_tolerance: 0.5
-  yaw_goal_tolerance: 0.1545
+  xy_goal_tolerance: 0.5 #0.5
+  yaw_goal_tolerance: 0.1545 #0.1545
   #自由目标速度。设为False时，车辆到达终点时的目标速度为0。
   #TEB是时间最优规划器。缺少目标速度约束将导致车辆“全速冲线”
   free_goal_vel: True
@@ -66,7 +62,7 @@ TebLocalPlannerROS:
   # complete_global_plan: True
   # Obstacles
 
-  min_obstacle_dist: 0.2 # 与障碍的最小期望距离
+  min_obstacle_dist: 0.25 #0.25 与障碍的最小期望距离
   inflation_dist: 0.8 #障碍物周围的缓冲区，进缓冲区会导致规划器减速
   include_costmap_obstacles: True #应否考虑到局部costmap的障碍设置为True后才能规避实时探测到的、建图时不存在的障碍物。
   costmap_obstacles_behind_robot_dist: 2.0 #考虑后面n米内的障碍物2.0
@@ -87,9 +83,9 @@ TebLocalPlannerROS:
   weight_acc_lim_theta: 1 #1
   weight_kinematics_nh: 100
   weight_kinematics_forward_drive: 1 #1
-  weight_kinematics_turning_radius: 50 #最小转向半径的权重，越大则越容易达到最小转向半径的情况,范围是0~1000
-  weight_optimaltime: 10 #很重要的一个参数，值越大小车越大胆，转弯切内道，越容易拉到最大速度，也撞死得越快
-  weight_obstacle: 100 #50
+  weight_kinematics_turning_radius: 20 #20 最小转向半径的权重，越大则越容易达到最小转向半径的情况,范围是0~1000
+  weight_optimaltime: 5 #5 很重要的一个参数，值越大车越大胆，转弯切内道，越容易拉到最大速度，也撞死得越快
+  weight_obstacle: 50 #50
   weight_inflation: 0.2
   weight_dynamic_obstacle: 10 # not in use yet
   alternative_time_cost: False # not in use yet

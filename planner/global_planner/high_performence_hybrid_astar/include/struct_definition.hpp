@@ -86,6 +86,8 @@ struct PlannerCommonParam
     float obstacle_theta_ratio;
     //是否平滑轨迹
     bool use_smoother;
+    //是否有地图膨胀
+    bool use_map_inflated;
 
     //与障碍物的最大距离，如果超过这个距离，就没必要优化了
     float obstacle_distance_max;

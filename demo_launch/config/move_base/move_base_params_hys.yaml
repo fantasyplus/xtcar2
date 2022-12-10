@@ -1,4 +1,4 @@
-shutdown_costmaps: true #当move_base在不活动状态时,是否关掉costmap
+shutdown_costmaps: false #当move_base在不活动状态时,是否关掉costmap
 
 controller_frequency: 5.0 #向底盘控制移动话题cmd_vel发送命令的频率.
 controller_patience: 3.0
@@ -12,3 +12,5 @@ oscillation_timeout: 5.0
 oscillation_distance: 0.1
 
 conservative_reset_dist: 0.1
+
+use_fixed_start_goal: true #是否使用固定起点终点（大论文用）

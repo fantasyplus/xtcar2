@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>high_performence_hybrid_astar</name>
+  <name>high_performence_hybrid_astar_ros</name>
   <version>0.1.0</version>
-  <description>The high_performence_hybrid_astar package</description>
+  <description>The high_performence_hybrid_astar_ros package</description>
 
   <maintainer email="530925206@qq.com">fantasyplus</maintainer>
   <license>MIT</license>
