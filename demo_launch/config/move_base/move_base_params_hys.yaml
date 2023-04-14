@@ -13,4 +13,4 @@ oscillation_distance: 0.1
 
 conservative_reset_dist: 0.1
 
-use_fixed_start_goal: true #是否使用固定起点终点（大论文用）
+use_fixed_start_goal: false #是否使用固定起点终点（大论文用）

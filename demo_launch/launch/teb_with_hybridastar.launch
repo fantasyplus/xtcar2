@@ -13,7 +13,7 @@
     <node name="map_server" pkg="map_server" type="map_server" args="$(find car_gazebo)/maps/$(arg map)" />
 
     <!-- 运行move_base节点 -->
-    <!-- <include file="$(find demo_launch)/launch/move_base_hys.launch" /> -->
+    <include file="$(find demo_launch)/launch/move_base_hys.launch" />
 
     <!-- 生成map到base_footprint的tf -->
     <include file="$(find map_to_baselink)/launch/map_to_baselink.launch" />
