@@ -63,7 +63,7 @@
       <geometry>
         <box size="${base_length} ${base_width} ${base_height}" />
       </geometry>
-      <material name="white" />
+      <material name="gray" />
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -104,7 +104,7 @@
 
   <!-- Colour -->
   <gazebo reference="base_link">
-    <material>Gazebo/White</material>
+    <material>Gazebo/Residential</material>
   </gazebo>
 
   <link name="lidar">
