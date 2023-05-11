@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!-- 
-  Robot model adapted from https://github.com/CIR-KIT/steer_drive_ros/blob/kinetic-devel/steer_drive_controller/test/common/urdf/wheel.xacro
+  Robot model adapted from
+https://github.com/CIR-KIT/steer_drive_ros/blob/kinetic-devel/steer_drive_controller/test/common/urdf/wheel.xacro
 
   Modifications:
     <transmissions> elements have been updated and added to 'front_steer'.
@@ -115,7 +116,9 @@
     <joint name="${name}_steer_joint" type="revolute">
       <parent link="${parent}_link" />
       <child link="${name}_steer_link" />
-      <origin xyz="${base_length/2-axle_offset} ${reflect*(base_width/2+axle_offset)} ${steer_height}" rpy="0 0 0" />
+      <origin
+        xyz="${base_length/2-axle_offset} ${reflect*(base_width/2+axle_offset)} ${steer_height}"
+        rpy="0 0 0" />
       <axis xyz="0 0 1" />
       <limit effort="${steer_effort}"
         lower="${steer_limit_deg * deg_to_rad * -1.0}" upper="${steer_limit_deg * deg_to_rad}"
