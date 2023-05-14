@@ -3,7 +3,7 @@
     <env name="ROSCONSOLE_FORMAT" value="[${node}]: ${message}" />
     <!--  ************** GAZEBO Simulator ***************  -->
     <arg name="x_pos" default="0.0" />
-    <arg name="y_pos" default="0.0" />
+    <arg name="y_pos" default="1.0" />
     <arg name="z_pos" default="0.0" />
     <arg name="roll" default="0.0" />
     <arg name="pitch" default="0" />
@@ -15,7 +15,7 @@
         command="$(find xacro)/xacro $(find car_description)/urdf/ackermann.urdf.xacro" />
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="world_name" value="$(find car_gazebo)/worlds/maze.world" />
+        <arg name="world_name" value="$(find car_gazebo)/worlds/maze2.world" />
         <arg name="paused" value="false" />
         <arg name="use_sim_time" value="true" />
         <arg name="gui" value="true" />
