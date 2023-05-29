@@ -16,7 +16,7 @@ install_common_dependencies()
 {
     # install most dependencies via apt-get
     ${SUDO} apt-get -y update
-    ${SUDO} apt-get -y upgrade
+    #${SUDO} apt-get -y upgrade
     # We explicitly set the C++ compiler to g++, the default GNU g++ compiler. This is
     # needed because we depend on system-installed libraries built with g++ and linked
     # against libstdc++. In case `c++` corresponds to `clang++`, code will not build, even
@@ -65,26 +65,9 @@ install_app_dependencies()
 
 install_ompl()
 {
-    if [ -z $APP ]; then
-        OMPL="ompl"
-    else
-        OMPL="omplapp"
-    fi
-    if [ -z $GITHUB ]; then
-        if [ -z $APP]; then
-            wget -O - https://github.com/ompl/${OMPL}/archive/1.5.2.tar.gz | tar zxf -
-            cd ${OMPL}-1.5.2
-        else
-            wget -O - https://github.com/ompl/${OMPL}/releases/download/1.5.2/${OMPL}-1.5.2-Source.tar.gz | tar zxf -
-            cd $OMPL-1.5.2-Source
-        fi
-    else
-        ${SUDO} apt-get -y install git
-        git clone --recurse-submodules https://github.com/ompl/${OMPL}.git
-        cd $OMPL
-    fi
-    mkdir -p build/Release
-    cd build/Release
+
+    mkdir -p ompl-1.6.0/build/Release
+    cd ompl-1.6.0/build/Release
     cmake ../.. -DPYTHON_EXEC=/usr/bin/python${PYTHONV}
     if [ ! -z $PYTHON ]; then
         # Check if the total memory is less than 6GB.
@@ -121,7 +104,7 @@ case $i in
         echo "Usage: `basename $0` [-p] [-a]"
         echo "  -p: enable Python bindings"
         echo "  -a: enable OMPL.app (implies '-p')"
-        echo "  -g: install latest commit from master branch on GitHub"
+        echo "  -g: install latest commit from main branch on GitHub"
     ;;
 esac
 done

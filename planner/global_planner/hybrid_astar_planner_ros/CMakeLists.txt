@@ -19,10 +19,17 @@ find_package(
     #insert by xt
     high_performence_hybrid_astar_ros
 )
+## 查找OMPL库
+find_package(ompl REQUIRED)
+
+if(NOT OMPL_FOUND)
+    message(AUTHOR_WARNING,"Open Motion Planning Library not found")
+endif(NOT OMPL_FOUND)
 
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
+  ${OMPL_INCLUDE_DIRS}
 )
 
 catkin_package(
@@ -53,6 +60,7 @@ add_dependencies(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
   ${catkin_LIBRARIES}
+  ${OMPL_LIBRARIES}
 )
 
 install(TARGETS ${PROJECT_NAME}
